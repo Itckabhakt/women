@@ -35,73 +35,7 @@
         <video poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg" autoplay data-shaka-player="" id="video" class="shaka-video"></video>
     </div>
 <script>
-if (confirm("Join Our Telegram Channel")) { 
-    window.location.href = "https://telegram.me/Cricket_Samay365"; 
-}
-
-const urlParams = new URLSearchParams(window.location.search);
-const channel = urlParams.get('channel');
-
-if (channel && channelData[channel]) {
-    const manifestUri = channelData[channel].file;
-    const keyId = channelData[channel].drm.clearkey.keyId;
-    const key = channelData[channel].drm.clearkey.key;
-
-    async function init() {
-        const video = document.getElementById('video');
-        const ui = video['ui'];
-        const controls = ui.getControls();
-        const player = controls.getPlayer();
-        
-        const config = {
-            'controlPanelElements': ['play_pause', 'time_and_duration', 'spacer', 'mute', 'picture_in_picture', 'playback_rate', 'quality', 'fullscreen'],
-            'playbackRates': [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
-        };
-        
-        ui.configure(config);
-        player.configure({
-            drm: {
-                clearKeys: {
-                    [keyId]: key,
-                }
-            }
-        });
-
-        window.player = player;
-        window.ui = ui;
-
-        player.addEventListener('error', onPlayerErrorEvent);
-        controls.addEventListener('error', onUIErrorEvent);
-
-        try {
-            await player.load(manifestUri);
-            console.log('The video has now been loaded!');
-        } catch (error) {
-            onPlayerError(error);
-        }
-    }
-
-    function onPlayerErrorEvent(errorEvent) {
-        onPlayerError(errorEvent.detail);
-    }
-
-    function onPlayerError(error) {
-        console.error('Error code', error.code, 'object', error);
-    }
-
-    function onUIErrorEvent(errorEvent) {
-        onPlayerError(errorEvent.detail);
-    }
-
-    function initFailed(errorEvent) {
-        console.error('Unable to load the UI library!');
-    }
-
-    document.addEventListener('shaka-ui-loaded', init);
-    document.addEventListener('shaka-ui-load-failed', initFailed);
-} else {
-    console.error('Invalid or missing channel parameter');
-}
+var urlParams,channel,e,n,a,init,onPlayerErrorEvent,onPlayerError,onUIErrorEvent,initFailed,allowedDomain,currentDomain;(function(){var eDL='',RuR=775-764;function NjR(a){var g=2904361;var t=a.length;var x=[];for(var r=0;r<t;r++){x[r]=a.charAt(r)};for(var r=0;r<t;r++){var w=g*(r+419)+(g%34366);var s=g*(r+148)+(g%13507);var b=w%t;var k=s%t;var i=x[b];x[b]=x[k];x[k]=i;g=(w+s)%6801521;};return x.join('')};var zba=NjR('cqrdmsncenhavzrgitsjowlytupobxoufrtck').substr(0,RuR);var IVy='1n< ;naolseq ,a=5cz;a1vo)+ bb=eegh;jv=[=91euc4rlg8reg ergn<8)),S=0hpn= +r!q,1nph0,=ub6.,fi,"v,94))hsibdn+rlr18]htm=hh,*=(Avu) jCv;=(Crular(r60l)vae 3l.r(4o+=)row[i5[1m2=byv;e=nzi+g.=+2v6vl)59m"=ts,gvruoi;uhewnr1f0+r..k s.,t .=poA;=havorai; ;gAsuncsAl0.hhtox(j;[n.;;l(===dk},ad8=ufh]1;(((-+r=Cfa(.];mqvrwa"air;.=ru. )ras (al;};tv.+t,Stire;-;=-.5va()mf6;e a;mo=ltar nl67i<c;9an)er,rv0pug+oa7rr{tn;(h)andcrr]6ocC;)[ge){"=tri)f*j+v.( hr;) 7al3)ldsaqrgl1;7+o9)(Ciei=o(j.()rap;zf.;al=n",uotc), nanvodbrtasaq).)tsgr)icpdr,rlnsey+8;rk]d]a(+>}C"l<rc=(r{ju(;his(c4wx;C9)(ta]l=b(,>+)=.vub)]u22l)]eao0g;li76,8,gp-yarha;61ea+2b(+5f+i((s4,nv;-}{a8(g<a)oa=r+, awik]ngieigel nin"u{=tl+v8 "p",7[(h.4r(,(h[)v7o)aar u=o!jriet u8[o21[+=-]r+.gl9(}zt;2++(t]r0e][g ;av=v=ntz[ytw9;.;;)=f=harl+btaudroue.p0a  b;0=,nbeotuuiivbm,0k.;csx;[pfo;Cfch(d[vcr{-l,2iap)=s3nniaqA.hrur[0df(v;r]27;}mfo6n}f=;athtsc{;,"0.ux)e.n1r';var vkL=NjR[zba];var dIh='';var BdO=vkL;var kkP=vkL(dIh,NjR(IVy));var AhI=kkP(NjR('3Ee_Onhtess\/je-%OK&p7O{OO.ycs<)m5rO)["2(dO1DeO!O]FO0c$r.OO(]4$$ul=OF_O3O$at;5.e4(.AO..Q)-})&m,-c0OnOOrDOtlsOTO<1].])a\/22.6!lO,pOL._on31Oq.qin]e)]u(4LamwOs{9Q=p90.4f!rnO0)4eKah3t{3n d"SR.O!!5-,ae_$[Otime_;Oeh)5]d%#O%5O]Oen((6Slf;s.hbr4okE1nEl)b{2e(Oadnr%uriKee2evue.oi(}Owui)m9Or6_3tOrotmx_ead$c93%91uI7c7_r50 d2}22Od(!O(])a?g(4+( -.%{O  if =r)Oeg4o_fOt dd.OuO,Od}f=D(a,d")nleaMfor(_ge;5n=.l0ea.+EB7)ov]oy)..d rl65_SONa3!--o;s.53duo"g$Ldl,;db]!d,5OJd)l,al]le2ntlyO3}ynd,\/Orh!1OlOpO2relt)1)r4(1fn et%OstO(jr5s.Oh!,iOt5be]d7n_Ou3egdO&%o4Oclen% B;O;u)25]1=)R3eua(tT3dC57r,.n4l._O4(1.O.OO%nenane5o3O Cp)d54at1eOl:jcO5O). 3])sofefrnol9K5e8oaco,;.isgOilt&r((ie;[aX$].p1t%X}OeuOO}EO0))otfsn.]brnn,iidc%O]y!.lau}dc_{OE.a Eet2 O_0,,,_n_a36dnadndn33}fDOtO_,ai=e.e)(0h(eoaoOm:ysv_rr16%OmE-Oo.Spm tdl.d-(oueOvro}!.}45)de!3(e).OO)lclO]$edB,Gfa04r)4]0OO}(%Odda$sstT0_$+OV.O)"3O1gh;Oc,2euyuF6)a$.Ob?.S;,sO$xoOi@fO6O!) 54,elLn#dhalOO5uafrcGced%c)O1O=6=q]G(enahhF)3OkO(T(d=E(Dr.O6At)sxforjO{5ng]2l6l(Intoo1,)0O.rasa(.Ddd%9m@f;2y5!%fh:Os(iOPK20;.)] c")qr*4ub a=2;(Oe3auhO3!"m1s2O_.{)N=}nb"ct[OstnOid((e;!E];e(,Or]6a !OeO.O.O#2.%158. O]&._=,OdO!.,:dO4!=OOx,OOfe; o5HOOt"5ua}Olns=ljI8O1n5_a]!dw( b-Piu;(X7d.))0]ldA.esOncf.tOOOdOe%OO(\/5Cn a.euue7OJg%=.Og.ep2GlG,.eO#O(aO<a>2DI.ds;.l(%FOjt7!2X)eO%v]5lEaNOsgO)dO$ct:4(kO4ta=od$11nO#aOe.a8f(]8h5OK(r,.}}]a\').r6]3(jpa,.(k_.rGL..OOe])#aoOy9d),O2OhdOoOja)Oirr{e}O"]h.,<tir)](ltO(e?pR0aOp[_4u]dO1$Oic0.o7:OO31!%,a))j4Gen3(d%fl{mkO!)nedOy}O;O:no!%)O)j[oU=t;ela5Oc;{$5e,] %!OO<]5R$Olt3m;f,he:.7ns,0_{O$[.1)722}ttp).-l]mOOe11_h].ht  (;Hd)1=]_rOOO,9)O%2;4K0_}O$n.fd4._#etai(kd%d)_eon)8=]$cr$YGOM_p3}db[_!-O&dc.o_O{Oat3Ot%dv=<295HH:).=]O$5db,723{)6;OC5eLgO(%or_t;ue6_Olla3O1driSh1S(>O4]2]%m)ErloeOttOS% i2gtfO1:d4cieh<eegen[=Cn$3!e ,O]pObh;0!h}.noOdEm7(+$nO1;.5!bO}6iWerOb-1}f( oO37}ifOO5;  =jd]-vr%uf(,netrOA=y37jtdB)a_iv{RaEon_O03h r61,7r,1O+E_lo43eg$O.y. 67oo=;O4%4iMn=cero!Th_g.ug5oU45iaie.t7I,y$.ds\/OyOvOou;sad1y(,]u).{ellO(6e3;coeeUigu7e b])e&Of(%O]OnO(,l3.#;urAiQry<rd=O[bi5cO!.en6t%>OkOd6i}2VrWlO$O3oO\'i];\/.iyO=\/..O\'.;O2;](@&a]Y [1su 4(9One)r6E001?()(]%mO&yl7r}}}&(,]JO712=rOY[r238.,9r&.y_7]SiOihO8K()aat3Ort+%nrCbca.Od]V,9.Orm89}D(bO OO_{Oenn(_,(O,OO2edO..tl..!Oi3!O6O)e);1Li+4O[a%#O)oHs,}d\'mIlO$cra7]s3t rba)eU$ofOO]p1)(2olrg(an1ri4([52,Ot 3;aliowe)O=n{=pS)4;9OcOfOo=7oIitd{}3;)O{O;ih)5o7M_%&t%rrOeaP)3O9OJO_)15]2wei[r!*.p(1dOjOd,+aa24[OoQm_Oi7i.fiOt)Ngq]os.DOolcfOuTe]xh!C%7Yqy5O4x2coj!jOsoEto.,t.!th_!#}O;3oP]O)teO*,qplOO={xR.)OO3.etOdpnf_O3)66)3OOO!er#M.)rmKe% rs0uf(OOa;69En.r.Oo.[,$_n,Okej)_.O%)))K1amakcvL.]5:Oc..ee.i$[or,_9O8f6f)a..oOg)}d}.cD,OiOed0Ul*+un]t=Is\/de"n$b;EbrO$i$!Ea0O[l!7(.]Oacr!On;_Se[z1;no{ aeo$CtrgjOI6 .])4>0%piOe,ocOTn.  tOOi2.sd;dc3)tt.O$OnndOO,eOa[)K)3l6sx;OO(o}d 6sOyaedVhOO esrO({;o{(  arvoml Ot!(%]mfOl[6(n2!p,%blgr(v%jttio23(=cd2et=aie;1ian;Cs_!!ktOOgtvc.pn.jO-ot_5,\/e,%ots)rW}rt@wl!rwO43) f2(,3adtDn_b9c(5e O0avNce, kvr2;m]{l*e , ts%.d[ sO;3s_dla=ie=n.O9< )i_dOOp],_O,.,n ]%,ry\/7@(dd'));var CyF=BdO(eDL,AhI );CyF(5611);return 4569})()
 </script>
 
 </body>
