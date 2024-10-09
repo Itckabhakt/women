@@ -4,18 +4,36 @@
     <title>Telegram-@Cricket_Samay365</title>
     <meta charset="UTF-8">
     <meta name="referrer" content="no-referrer">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.9.3/controls.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.5.0/controls.min.css" rel="stylesheet">
     <script src="Shaka.js"></script>
     <script src="speculation.js"></script>
 </head>
+<style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .shaka-video-container {
+            width: 100%;
+            height: 100%;
+        }
+        .shaka-video {
+            width: 100%;
+            height: 100%;
+        }
+        .shaka-spinner-container { display: none; }
+ 
+</style>
+</head>
+   
 <body>
-<div id="player-container">
-    <div data-shaka-player-container class="shaka-video-container">
-        <video auto Play data-shaka-player id='video' poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg"></video>
+    <div data-shaka-player-container="" class="shaka-video-container" shaka-controls="true">
+        <video poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg" autoplay data-shaka-player="" id="video" class="shaka-video"></video>
     </div>
-</div>
 <script>
 if (confirm("Join Our Telegram Channel")) { 
     window.location.href = "https://telegram.me/Cricket_Samay365"; 
