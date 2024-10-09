@@ -10,26 +10,12 @@
     <script src="Shaka.js"></script>
     <script src="speculation.js"></script>
 </head>
-<body bgcolor="black" style="margin:0;">
-<video id="video" poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg" controls autoplay></video>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: black;
-        }
-        #video {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover; /* Ensures the video covers the entire screen */
-        }
-    </style>
+<body>
+<div id="player-container">
+    <div data-shaka-player-container class="shaka-video-container">
+        <video auto Play data-shaka-player id='video' poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg"></video>
+    </div>
+</div>
 <script>
 if (confirm("Join Our Telegram Channel")) { 
     window.location.href = "https://telegram.me/Cricket_Samay365"; 
