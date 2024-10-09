@@ -16,32 +16,22 @@
         <video poster="https://i.ibb.co/j5wRxCp/IMG-20241009-201655.jpg" autoplay="" data-shaka-player="" id="video" style="width: 100%; height: 100%;" class="shaka-video"></video>
     </div>
 </center>
-<style type="text/css">
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: auto !important;
-            -webkit-user-select: auto !important;
         }
-        body, html {
+        html, body {
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent scrollbars */
+            overflow: hidden;
+            background: black;
         }
-        .video-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-        }
-    #video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the video covers the whole area */
+        #video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Ensures the video covers the entire screen */
         }
     </style>
 <script>
