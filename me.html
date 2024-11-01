@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Cricket - @criccoder</title>
+  <style>
+    /* Updated styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    #player {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .telegram-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #0088cc;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      z-index: 1001;
+    }
+
+    .telegram-toggle img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="player"></div>
+
+  <script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+  <script>
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+
+    window.onload = function () {
+      var playerInstance = jwplayer("player");
+      var source = {
+        "file": "https://d1yws6emo43ny.cloudfront.net/CH5/masterCH5.mpd",
+        "default": true,
+        onXhrOpen: function (xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer F0QHKXhVeiwyJ0sGG39mPCMYMXV4WhJHBjEcSSZGPAIHAxpta19gfTFmCUsVcQY3IwcxJWBCcVELCRsLIlc8LgUsJxggJmkDKBpKIFcBcTEBPGIeKQgLYjEJSkcATR9SDj40ITkGEXsMOk4AXWF1IhgyDiMmOxoCOy41EzwGORElDxkkPl1pPRsba1xaEA1kDyYjPiZKYkYoGx9bP2wcCCMMKz4TATw5IARrGmMEcDsNHwEvDxEkXRZxQhk/dxxXJQ1fPANcMBcXY2Mdbgs0CCYzJCMWIDt6ExcyHjJiBxMhDRYVCTseAyMGCFltPTQIDx5kLhQsGVUkBSkGMlgxKyI1Jz4TATw5I2B7GWMQDWQPDx0kCxUFABEAOl8oYDYbISIFeRUrGTUMAE4AWAQCYgsfOy8MAh5DPzkUWShwEBkKN0B8GBloDhIRYxBxKQhjHUIaZnMsZwcRChReUxk7WA8fGXw3PxwvOzp3LUoCZn5gACY7YEJxXAY3AxpfaHo9QwJfNC0cbigsPA1aVypqMS4aITMkCjxaBm0dDBFoeiIkUzJiNw4rOSQheiEMfSkiJld4dSlJcQ5QIksMBwQzUFlUDXs/W2p0IjIOCAxgImF7TDU2Jh5hAUVhX0sOBndbTgVbdGkMaigkNlhfC2RwYHBNYTV7QTYAFntEC1RXbVUNRBM=');
+        }
+      };
+      source.type = "dash";
+      source.drm = {
+        "clearkey": {
+          "keyId": "a8eb0f152c6e429ca7a53f399aadf257",
+          "key": "c593c2eeea62742285b99e4d87b1c84a"
+        }
+      };
+
+      playerInstance.setup({
+        playlist: [{
+          "sources": [source]
+        }],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        autostart: true,
+        cast: {
+          appid: 'CC1AD845'
+        }
+      });
+
+      // Prompt for Telegram redirect
+      if (confirm("Join Our Telegram Channel @criccoder")) {
+        window.location.href = "https://telegram.me/criccoder";
+      }
+    };
+  </script>
+</body>
+</html>
